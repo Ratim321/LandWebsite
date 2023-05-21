@@ -1,0 +1,625 @@
+<?php
+
+
+$db = mysqli_connect("localhost", "root", "", "land");
+
+
+$result = mysqli_query($db,"SELECT p.place,p.price,p.area,p.description
+FROM landdetails p");
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Land Consultancy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--/*font awesome icons*/-->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!--rubik font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Rubik:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+    <!--custom css-->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!--media css-->
+    <link type="text/css" rel="stylesheet" href="css/media.css" />
+
+    <!--jquery ui files-->
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui.structure.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!--owl carousel-->
+    <link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+
+</head>
+
+<body>
+
+    <div id="arrow">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+    <header id="home">
+    <div class="con max-width-0 m-auto">
+  <nav class="navbar navbar-expand-lg bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Land+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="index1.php">Home</a>
+        
+        </li>
+       
+
+
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#why-choose-us">Services</a>
+        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="land.php">Land</a>
+        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#project">Project</a>
+        
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#contact">Contact Us</a>
+        
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="terms.html">Terms And Condition</a>
+        
+        </li>
+        
+      
+      </ul>
+   
+
+      <form class="d-flex" action="search.php" role="search"  method="post">
+        <input class="form-control me-2" type="text" name="input_value" placeholder="Land Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+  </div>
+    </header>
+
+    <section id="mobile-menu">
+        <div class="container-mobile">
+            <div class="mobile-logo">
+                <img src="images/logo.png" class="img-responsive" alt="logo" />
+
+                <div class="clear"></div>
+                <!--clear-->
+            </div>
+            <!--nav-col-->
+            <div class="cnt-info-col">
+                <button type="button" id="toggle-bar"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="clear"></div>
+            <!--clear-->
+        </div>
+    </section>
+
+   
+
+    <section class="header-bg-parent">
+        <div class="header-col1">
+            <h5>WELCOME</h5>
+            <h2>We offer Land</h2>
+            <h2 class="typewrite" data-period="1000" data-type='[ "Buy", " sell ", "Mortage","Consulation"]'></h2>
+            <h2>Service</h2>
+            <p>Your all kind of land problem will be solved by us</p>
+            <button class="common-btn" type="button">CONTACT US</button>
+        </div>
+        <!--header-col1-->
+        <div class="header-col2">
+
+        </div>
+        <!--header-col2-->
+        <div class="clear"></div>
+        <!--clear-->
+        <img class="hedaer-bg-par-img" src="images/corner-img.png" class="img-responsive" alt="corner" />
+    </section>
+    <!--header-bg-parent-->
+
+    <section id="feature-sec">
+        <div class="text-center">
+            <h5 class="common-h5">CARE FEATURES</h5>
+            <h2 class="common-h2">Our Services</h2>
+        </div>
+        <!--text-center-->
+        <section class="faeture-col-par">
+            <div class="container">
+                <div class="feature-col">
+                    <h3>Land Buy Papers Check</h3>
+                    <img src="images/home-faeture-img/service_img1.png" class="img-responsive" alt="service" />
+                    <h4>We will help you to &amp; but your land without any hassel</h4>
+                    <!--                </div>feature-col-->
+                </div>
+                <!--feature-col-->
+                <div class="feature-col">
+                    <h3>Land Sell Paper Check</h3>
+                    <img src="images/home-faeture-img/service_img2.png" class="img-responsive" alt="service" />
+                    <h4>We will find people &amp; who will buy your land</h4>
+                    <!--                </div>feature-col-->
+                </div>
+                <!--feature-col-->
+                <div class="feature-col">
+                    <h3>Mortage Paper check</h3>
+                    <img src="images/home-faeture-img/service_img3.png" class="img-responsive" alt="service" />
+                    <h4>we will .......... &amp; understanding the product</h4>
+                    <!--                </div>feature-col-->
+                </div>
+                <!--feature-col-->
+                <div class="feature-col">
+                    <h3>Land Consulation</h3>
+                    <img src="images/home-faeture-img/service_img4.png" class="img-responsive" alt="service" />
+                    <h4>We will give  you consulation &amp; about what to do with your land</h4>
+                    <!--                </div>feature-col-->
+                </div>
+                <!--feature-col-->
+                <div class="clear"></div>
+            </div>
+        </section>
+
+        <section id="why-choose-us">
+            <div class="container">
+                <div class="why-choose-col">
+                    <h5 class="common-h5">WHY CHOOSE US</h5>
+                    <h2 class="common-h2">Buy and Sell your land Safely</h2>
+                    <p>We are passionate about our work.You will find support from us. We care about your business, which is why we work with you.</p>
+                    <button class="common-btn" type="button">Available land for sell</button>
+                </div>
+                <div class="count-col">
+                    <div class="stat">
+                        <div class="count-sub-col">
+                            <div class="milestone-counter">
+                                <span class="stat-count highlight">30</span>
+                                <div class="milestone-details">Happy Customers</div>
+                            </div>
+                            <!--milestone-counter-->
+                        </div>
+                        <!--count-sub-col-->
+                        <div class="count-sub-col">
+                            <div class="milestone-counter">
+                                <span class="stat-count highlight">100</span>
+                                <div class="milestone-details">Ordered Coffee's</div>
+                            </div>
+                            <!--milestone-counter-->
+                        </div>
+                        <!--count-sub-col-->
+                        <div class="count-sub-col">
+                            <div class="milestone-counter">
+                                <span class="stat-count highlight">140</span>
+                                <div class="milestone-details">Awards Win</div>
+                            </div>
+                            <!--milestone-counter-->
+                        </div>
+                        <!--count-sub-col-->
+                    </div>
+                    <!--stat-->
+                    <div class="stat-info-par">
+                        <div class="stat-info-sub-par">
+                            <div class="stat-info-div">
+                                <p>Number of our Client</p>
+                            </div>
+                            <!--stat-info-div-->
+                        </div>
+                        <!--stat-info-sub-par-->
+                        <div class="stat-info-sub-par">
+                            <div class="stat-info-div">
+                                <p>Pending Work</p>
+                            </div>
+                            <!--stat-info-div-->
+                        </div>
+                        <!--stat-info-sub-par-->
+                        <div class="stat-info-sub-par">
+                            <div class="stat-info-div">
+                                <p>Number of land sold via our website</p>
+                            </div>
+                            <!--stat-info-div-->
+                        </div>
+                        <!--stat-info-sub-par-->
+                    </div>
+                    <!--stat-info-par-->
+                </div>
+                <!--count-col-->
+                <div class="clear"></div>
+            </div>
+            <!--container-->
+        </section>
+
+        <section id="expand">
+            <div class="text-center">
+                <h5 class="common-h5">EXPERINCE</h5>
+                <h2 class="common-h2">Our skill and quality</h2>
+            </div>
+            <!--text-center-->
+            <div class="expand-img-col">
+                <div class="expand-img">
+                    <img src="images/expand-home-img.png" alt="expand" class="img-responsive" />
+                    <div class="expand-img-info">
+                        <i class="fa fa-mobile-phone"></i>
+                        <h2>Donot waste time <br>Call Us</h2>
+                        <p>We will help to find your best choice land.</p>
+                        <a href="#">Get In Touch <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!--expand-img-col-->
+            <!-- <div class="expand-img-info-col">
+                <div class="progress-bar-col">
+                    <div class="col-sm-4">
+                        <div class="progressbar">
+                            <div class="second circle" data-percent="77">
+                                <strong></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="progressbar">
+                            <div class="second circle" data-percent="55">
+                                <strong></strong>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="progressbar">
+                            <div class="second circle" data-percent="100">
+                                <strong></strong>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!--progress-bar-col-->
+                <div class="progress-info-col">
+                    <div class="progress-info">
+                        <h3>Paper Protection</h3>
+                        <p>Ea pro tibique comprehensam, sed ea verear numquam molestie. Nam te omittam comprehensam.</p>
+                    </div>
+                    <!--progress-info-->
+                    <div class="progress-info">
+                        <h3>Stay to our commitment</h3>
+                        <p>Ea pro tibique comprehensam, sed ea verear numquam molestie. Nam te omittam comprehensam.</p>
+                    </div>
+                    <!--progress-info-->
+                    <div class="progress-info">
+                        <h3>Reputation</h3>
+                        <p>Ea pro tibique comprehensam, sed ea verear numquam molestie. Nam te omittam comprehensam.</p>
+                    </div>
+                    <!--progress-info-->
+                </div>
+                <!--progress-info-col-->
+            </div>
+            <!--expand-img-info-col-->
+            <div class="clear"></div>
+            <!--clear-->
+        </section>
+
+        <Section id="faq-par">
+            <div class="container">
+                <div class="faq-que-col">
+                    <h5 class="common-h5">Q&A</h5>
+                    <h2 class="common-h2">Quick Question And Answer</h2>
+                    <div id="faq-accordion">
+
+
+                        <h3>Why should you trust us ?</h3>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+
+                        <h3>Is there is any chance of fraud ?</h3>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+
+                        <h3>What is the gurantty of our work ?</h3>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+
+                        <h3>Is this website is only about land?</h3>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+
+                        <h3>Do or Not ?</h3>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+
+                    </div>
+                </div>
+                <!--faq-que-col-->
+                <div class="faq-bg-col">
+                    <div class="faq-img-par">
+                        <img src="images/home-faq.png" alt="faq" class="img-responsive" />
+                        <div class="faq-img-info">
+                            <i class="fa fa-lightbulb-o"></i>
+                            <h2>Do you have a land that need to be sell? <br>Just call us</h2>
+                            <p>Find out how it works and ask any <br> questions you may have.</p>
+                            <a href="#">Get In Touch <i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                        <!--faq-img-info-->
+                    </div>
+                    <!--faq-img-par-->
+                </div>
+                <!--faq-bg-col-->
+                <div class="clear"></div>
+            </div>
+            <!--container-->
+        </Section>
+
+        <Section id="project">
+            <div class="text-center">
+                <h5 class="common-h5">FEATURED LAND</h5>
+                <h2 class="common-h2">Our latest land listed for sell</h2>
+            </div>
+            <div class="owl-carousel owl-theme">
+
+            <?php
+            while ($row = $result->fetch_assoc()) {
+                if ($row != null) {
+                    $v1 = $row['place'];
+                    $v2 = $row['description'];
+                    $v3 = $row['price'];
+                    $v4 = $row['area'];
+                    echo "   <div class='item'>
+                <div class='owl-img-par'>
+                    <img src='images/portfolio/portfolio-one.jpg' class='img-responsive' />
+                    <div class='owl-img-info'>
+                    <h3>Place:  $v2</h3>
+                    <div><h4>PRICE:  $v3 Taka</h4>
+                    <h5>Area:$v4
+              </div>
+                    </div>
+                </div>
+                
+            </div> ";
+                }
+            }
+       
+       
+       
+        ?>
+              
+              
+               
+               
+
+            </div>
+           
+        </Section>
+
+        <section id="price-table">
+            <div class="text-center">
+                <h5 class="common-h5">Consulation Fee</h5>
+                <h2 class="common-h2">The Best Solutions for Our Clients</h2>
+            </div>
+            <div class="basic-price-col">
+                <div class="basic-price-info">
+                    <h4>Basic Plan</h4>
+                    <div class="price">
+                        <p>$2450</p>
+                    </div>
+                    <!--price-->
+                    <div class="price-list">
+                        <ul>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                        </ul>
+                    </div>
+                    <!--price-list-->
+                    <button type="button" class="price-btn">Get Started</button>
+                </div>
+                <!--basic-price-info-->
+            </div>
+            <!--basic-price-col-->
+            <div class="basic-price-col rec-price">
+                <div class="basic-price-info">
+                    <h4>Standart Plan</h4>
+                    <div class="price">
+                        <p>$2450</p>
+                    </div>
+                    <!--price-->
+                    <div class="price-list">
+                        <ul>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                        </ul>
+                    </div>
+                    <!--price-list-->
+                    <button type="button" class="price-btn">Get Started</button>
+                </div>
+                <!--basic-price-info-->
+            </div>
+            <!--basic-price-col-->
+            <div class="basic-price-col">
+                <div class="basic-price-info">
+                    <h4>Premium Plan</h4>
+                    <div class="price">
+                        <p>$2450</p>
+                    </div>
+                    <!--price-->
+                    <div class="price-list">
+                        <ul>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                            <li>SEO Audits</li>
+                        </ul>
+                    </div>
+                    <!--price-list-->
+                    <button type="button" class="price-btn">Get Started</button>
+                </div>
+                <!--basic-price-info-->
+            </div>
+            <!--basic-price-col-->
+            <div class="clear"></div>
+        </section>
+
+        <section id="blog">
+            <div class="text-center">
+                <h5 class="common-h5">Listed Land</h5>
+                <h2 class="common-h2">Latest Land</h2>
+            </div>
+
+
+         
+
+
+
+
+            <div class="container">
+                <div class="blog-col">
+                    <img src="images/blog/blog-1.jpg" alt="blog1" class="img-responsive" />
+                    <span>May 16 2020</span>
+                    <h3>How to Increase Your ROI Through scientific SEM?</h3>
+                    <a href="https://ratim321.github.io/land/gulshan">Read More</a>
+                </div>
+
+                
+                <!--blog-col-->
+                <div class="blog-col">
+                    <img src="images/blog/blog-2.jpg" alt="blog1" class="img-responsive" />
+                    <span>May 16 2020</span>
+                    <h3>How to Increase Your ROI Through scientific SEM?</h3>
+                    <a href="#">Read More</a>
+                </div>
+                <!--blog-col-->
+                <div class="blog-col">
+                    <img src="images/blog/blog-3.jpg" alt="blog1" class="img-responsive" />
+                    <span>May 16 2020</span>
+                    <h3>How to Increase Your ROI Through scientific SEM?</h3>
+                    <a href="#">Read More</a>
+                </div>
+                <!--blog-col-->
+                <div class="clear"></div>
+            </div>
+            <!--container-->
+        </section>
+
+        <Section id="contact">
+            <div class="container">
+                <div class="form-par">
+                    <h2>Get IN Touch With US !</h2>
+                    <form>
+                        <input type="text" placeholder="Your Name" class="f-name form-com" />
+                        <input type="email" placeholder="Email" class="em-input form-com" />
+                        <input type="tel" id="phone" name="phone" class="phone-input form-com" placeholder="Mobile No" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                        <input type="text" placeholder="Website" class="web-input form-com" />
+                        <input type="submit" value="submit" class="submit-btn" />
+                    </form>
+                </div>
+            </div>
+            <!--container-->
+        </Section>
+        <!--contact-->
+
+
+
+        <!-- JavaScript -->
+        <script src="js/script.js"></script>
+
+
+
+
+
+
+        
+
+        <!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<title> Circular Progress Bar </title>-->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+                                        
+    </head>
+    <body>
+        
+
+        <!-- JavaScript -->
+        <!--<script src="js/script.js"></script>-->
+    </body>
+</html>
+
+        <footer>
+            <div class="container">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>We focus on the needs of small to middle market businesses to improve and grow their return.so that your site will withstand the test of time. We care about your business, which is why we work with you.</p>
+                    <div class="social-icons-footer">
+                        <i class="fa fa-facebook-square"></i>
+                        <i class="fa fa-twitter-square"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-youtube-square"></i>
+                    </div>
+                </div>
+                <!--footer-col-->
+                <div class="footer-col footer-2-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li >Services</li>
+                        <li>Portfolio</li>
+                        <li>Land</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <!--footer-col-->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa fa-envelope-o"></i> <a href="mailto:demo@gmail.com">kaziruhul@gmail.com</a></p>
+                    <p><i class="fa fa-mobile-phone"></i> <a href="tel:9855000000">+8801767076722</a></p>
+                    <p><i class="fa fa-map-o"></i> <span>Borisal</span></p>
+                </div>
+                <!--footer-col-->
+                <div class="clear"></div>
+                <hr class="footer-hr">
+                <p class="copyright-footer">&copy; 2022 — LAND. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <Script src="js/jquery-ui.min.js"></Script>
+        <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+        <Script src="js/extrenaljq.js" type="text/javascript"></Script>
+</body>
+<script>
+    $(document).ready(function() {
+        $("#toggle-bar").click(function() {
+            $(".menu").slideToggle(400);
+        });
+    });
+
+</script>
+
+
+</html>
